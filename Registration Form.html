@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registration Form</title>
+    <link rel="stylesheet" href="Registration.css" />
+    <script>
+      let users = [];
+
+      function chkUser() {
+        let email = document.getElementById("email").value;
+        let pswd = document.getElementById("pswd").value;
+        let len = users.length;
+        for (let i = 0; i < len; i++) {
+          if (users[i].email == email && users[i].pswd == pswd) {
+            root.innerHTML = ` <div class="samp"> Welcome </div>
+                            <button onclick="showLogin()" id="logoutbtn">LogOut</button>`;
+          }
+        }
+      }
+      function showLogin() {
+        root.innerHTML = ` <div class="container">
+      <div class="box">
+        <h1>Login Form</h1>
+        <p><input type="email" id="email" placeholder="Email Address" /></p>
+        <p><input type="password" id="pswd" placeholder="Password" /></p>
+        <button onclick="chkUser()">Log In</button>
+        <button onclick="showForm()">Create Account</button>
+        <div id="data"></div>
+      </div>
+    </div>`;
+      }
+
+      function showForm() {
+        root.innerHTML = ` <div class="container">
+      <div class="box">
+       
+        <h1>New User SignUp Form</h1>
+        <p>
+          <input type="text" id="name" placeholder="Full Name" required />
+        </p>
+        <p><input type="email" id="email" placeholder="Email" required /></p>
+        <p>
+          <input type="password" id="pswd" placeholder="Password" required />
+        </p>
+        <p><input type="date" id="dob" placeholder="Date Of Birth" /></p>
+        <button onclick="addUser()">Register</button>
+        
+        <div id="data"></div>
+      </div>
+    </div> `;
+      }
+      function deleteUser(index) {
+        users.splice(index, 1);
+        showUsers();
+      }
+
+      function showUsers() {
+        let len = users.length;
+        let str = "";
+        for (let i = 0; i < len; i++) {
+          str += `<div> ${users[i].name}|${users[i].email}|${users[i].pswd}|${users[i].dob} <button onclick='deleteUser(${i})'>Delete</button> </div>`;
+        }
+        data.innerHTML = str;
+      }
+
+      function addUser() {
+        let name = document.getElementById("name").value;
+        let email = document.getElementById("email").value;
+        let pswd = document.getElementById("pswd").value;
+        let dob = document.getElementById("dob").value;
+        let user = {
+          name: name,
+          email: email,
+          pswd: pswd,
+          dob: dob,
+        };
+        users.push(user);
+        showUsers();
+        showLogin();
+      }
+    </script>
+  </head>
+  <body onload="showLogin()">
+    <div id="root"></div>
+  </body>
+</html>

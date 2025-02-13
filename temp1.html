@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LogIn Page</title>
+    <link rel="stylesheet" href="temp1.css" />
+    <script>
+      function showdata() {
+        let email = document.getElementById("email").value;
+        let pswd = document.getElementById("pswd").value;
+
+        let str = `${email} | ${pswd}`;
+        data.innerHTML = str;
+      }
+    </script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="box">
+        <h1>Login Form</h1>
+        <p><input type="email" id="email" placeholder="Email Address" /></p>
+        <p><input type="password" id="pswd" placeholder="Password" /></p>
+        <button onclick="showdata()">Log In</button>
+        <div id="data"></div>
+      </div>
+    </div>
+  </body>
+</html>
