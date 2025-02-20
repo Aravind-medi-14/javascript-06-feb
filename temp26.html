@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    .cont {
+    }
+  </style>
+  <body>
+    <div class="cont">
+      <div class="img">
+        <!-- <img
+          src="https://cdn.gamedevmarket.net/wp-content/uploads/20191203152955/77f8f945d6791e26447b40fd36260908.jpg"
+          alt=""
+        /> -->
+      </div>
+      <div><img src="ball.png" alt="ball image" width="150px" id="ball" /></div>
+      <div>
+        <img src="bucket.jpg" alt="bucket image" width="200px" id="bucket" />
+      </div>
+      <script>
+        ball.style.position = "absolute";
+        bucket.style.position = "absolute";
+        let t = 0,
+          l = 0;
+        let bucket_top = 400;
+        let bucket_left = 0;
+        function f1() {
+          t++;
+          ball.style.top = t + "px";
+          ball.style.left = l + "px";
+          if (t < 500) {
+            setTimeout(f1, 10);
+          } else {
+            t = 1;
+            l = Math.random() * 800;
+
+            f1();
+            console.log(l);
+          }
+        }
+        f1();
+        bucket.style.top = bucket_top + "px";
+        bucket.style.left = bucket_left + "px";
+
+        let b = document.body;
+        b.onkeydown =
+          b.onkeyup =
+          b.onkeypress =
+            function handle(e) {
+              if (e.key == "ArrowLeft") bucket_left -= 5;
+              if (e.key == "ArrowUp") bucket_top -= 10;
+              if (e.key == "ArrowRight") bucket_left += 5;
+              if (e.key == "ArrowDown") bucket_top += 10;
+              bucket.style.top = bucket_top + "px";
+              bucket.style.left = bucket_left + "px";
+            };
+      </script>
+    </div>
+  </body>
+</html>

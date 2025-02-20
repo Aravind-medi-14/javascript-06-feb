@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calci</title>
+    <link rel="stylesheet" href="calcistyle.css" />
+  </head>
+  <script>
+    function calculate() {
+      let num1 = Number(document.getElementById("n1").value);
+      let num2 = Number(document.getElementById("n2").value);
+
+      let str = `Addition : ${num1} + ${num2} = ${num1 + num2} <br>`;
+      str = str + `Subtraction : ${num1} - ${num2} = ${num1 - num2} <br>`;
+      str = str + `Multiplication : ${num1} * ${num2} = ${num1 * num2} <br>`;
+      str = str + `Division : ${num1} / ${num2} = ${num1 / num2} <br>`;
+
+      msg1.innerHTML = str;
+      //   let add = Number(num1) + Number(num2);
+      //   msg1.innerHTML = `${num1} + ${num2} = ${add}`;
+      //   let sub = Number(num1) - Number(num2);
+      //   msg2.innerHTML = `${num1} - ${num2} = ${sub}`;
+      //   let mul = Number(num1) * Number(num2);
+      //   msg3.innerHTML = `${num1} * ${num2} = ${mul}`;
+      //   let div = Number(num1) / Number(num2);
+      //   msg4.innerHTML = `${num1} / ${num2} = ${div}`;
+    }
+  </script>
+  <body>
+    <div class="container">
+      <div class="box">
+        <p><input type="number" id="n1" placeholder="Enter Number" /></p>
+        <p><input type="number" id="n2" placeholder="Enter Number" /></p>
+        <button onclick="calculate()" id="btn">Submit</button>
+      </div>
+      <div id="msg1"></div>
+
+      <!-- <div id="msg2"></div>
+      <div id="msg3"></div>
+      <div id="msg4"></div> -->
+    </div>
+  </body>
+</html>

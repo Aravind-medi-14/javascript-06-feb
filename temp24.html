@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      let doj = new Date();
+      //document.write(doj);
+      // document.write(doj.getDate());
+      //document.write(doj.getFullYear());
+      //document.write(doj.getDay());
+      function display() {
+        let date = new Date(document.getElementById("date").value);
+
+        if (date.getDay() === 3) {
+          msg.innerHTML = "Sorry , We are closed on Wednesday ";
+        } else {
+          msg.innerHTML = "Welcome";
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <input type="date" id="date" />
+    <button onclick="display()">Submit</button>
+    <div id="msg"></div>
+  </body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .container {
+        display: flex;
+        justify-content: center;
+        text-align: center;
+      }
+      .box {
+        margin: 20px;
+        border: 2px solid gray;
+        padding: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script>
+      let products = [
+        {
+          id: 1,
+          name: "Product 1 ",
+          price: 50,
+          desc: "This is description of product 1",
+          url: "https://picsum.photos/id/1/200/200",
+        },
+        {
+          id: 2,
+          name: "Product 2 ",
+          price: 100,
+          desc: "This is description of product 2",
+          url: "https://picsum.photos/id/2/200/200",
+        },
+        {
+          id: 3,
+          name: "Product 3",
+          price: 200,
+          desc: "This is description of product 3",
+          url: "https://picsum.photos/id/3/200/200",
+        },
+      ];
+      //console.log(products[0]);
+      let str = "<div class='container'>";
+      let length = products.length;
+      for (let i = 0; i < length; i++) {
+        str += ` <div class='box'>
+                <img src=${products[i].url} >
+                <div> <h2> ${products[i].name} </h2></div>
+                <p>${products[i].desc}  </p>   
+                <h3> ${products[i].price} </h3>
+                <button>Add to cart</button>
+                </div>`;
+      }
+      str += "</div>";
+      root.innerHTML = str;
+    </script>
+  </body>
+</html>

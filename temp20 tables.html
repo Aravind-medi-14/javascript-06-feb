@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tables</title>
+    <link rel="stylesheet" href="tables.css" />
+    <script>
+      function table() {
+        let n = document.getElementById("num").value;
+        let temp = "";
+        for (let i = 1; i < 11; i++) {
+          temp += `${n} x ${i} = ${n * i}<br>`;
+          msg.innerHTML = temp;
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="box">
+        <p><input type="number" id="num" placeholder="Enter Number" onchange="table()"/></p>
+        <p>
+          <button onclick="table()" id="btn" >Submit</button>
+        </p>
+        <div id="msg"></div>
+      </div>
+    </div>
+  </body>
+</html>
