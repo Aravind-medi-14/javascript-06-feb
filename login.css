@@ -1,0 +1,49 @@
+* {
+  margin: 0px;
+}
+.box {
+  width: 100%;
+  max-width: 400px;
+  height: 70vh;
+  background-color: lightblue;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  
+  padding: 60px;
+  padding-right: 10pc;
+}
+
+#email {
+  width: 100%;
+
+  padding: 10px;
+  margin: 10px;
+  margin-right: 20px;
+  font-family: calibri;
+  font-size: 20px;
+}
+#pswd {
+  width: 100%;
+  padding: 10px;
+  margin: 10px;
+  font-size: 20px;
+  font-family: calibri;
+}
+.btn {
+  width: 100%;
+  margin: 10px;
+  padding: 10px;
+  border: none;
+  background-color: rgb(32, 32, 233);
+  color: white;
+  font-size: 20px;
+  font-family: calibri;
+}
+.btn :hover {
+  cursor: zoom-in;
+  background-color: red;
+}
